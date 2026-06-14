@@ -164,16 +164,29 @@
 <div class="flex items-center gap-2">
 <span class="font-headline-md text-xl md:text-headline-md font-extrabold tracking-tight text-primary dark:text-primary-fixed">BHATTI AGRO</span>
 </div>
-<div class="hidden md:flex items-center gap-10">
-<a class="text-on-background/70 hover:text-primary dark:hover:text-primary-fixed font-medium transition-all text-sm uppercase tracking-wider" href="#">Products</a>
-<a class="text-on-background/70 hover:text-primary dark:hover:text-primary-fixed font-medium transition-all text-sm uppercase tracking-wider" href="#">Services</a>
-<a class="text-on-background/70 hover:text-primary dark:hover:text-primary-fixed font-medium transition-all text-sm uppercase tracking-wider" href="#">Company</a>
-<a class="text-on-background/70 hover:text-primary dark:hover:text-primary-fixed font-medium transition-all text-sm uppercase tracking-wider" href="#">Resources</a>
+<div class="hidden md:flex items-center gap-6 lg:gap-10">
+<a class="nav-link text-on-background/70 hover:text-primary dark:hover:text-primary-fixed font-medium transition-all text-sm uppercase tracking-wider relative group" href="products.html">
+Products
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a class="nav-link text-on-background/70 hover:text-primary dark:hover:text-primary-fixed font-medium transition-all text-sm uppercase tracking-wider relative group" href="#services">
+Services
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a class="nav-link text-on-background/70 hover:text-primary dark:hover:text-primary-fixed font-medium transition-all text-sm uppercase tracking-wider relative group" href="about.html">
+Company
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a class="nav-link text-on-background/70 hover:text-primary dark:hover:text-primary-fixed font-medium transition-all text-sm uppercase tracking-wider relative group" href="#resources">
+Resources
+<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+</a>
 </div>
-<div class="flex items-center gap-4">
-<button class="hidden lg:block text-on-background/60 text-sm font-semibold hover:text-primary">URDU</button>
-<button class="bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">Get Quote</button>
-<button class="material-symbols-outlined text-primary dark:text-primary-fixed p-2 rounded-full hover:bg-surface-variant/50 transition-colors" id="theme-toggle">dark_mode</button>
+<div class="flex items-center gap-3 lg:gap-4">
+<button class="hidden lg:block text-on-background/60 text-sm font-semibold hover:text-primary transition-all urdu-btn" onclick="toggleUrdu()">
+اردو
+</button>
+<a href="contact.html" class="bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">Get Quote</a>
 </div>
 </nav>
 </header>
@@ -444,6 +457,15 @@
 </div>
 </div>
 <div>
+<h4 class="font-bold text-on-surface text-sm uppercase tracking-widest mb-8">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="index.html">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="products.html">Products</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="about.html">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
 <h4 class="font-bold text-on-surface text-sm uppercase tracking-widest mb-8">Solutions</h4>
 <ul class="space-y-4">
 <li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Crop Nutrition</a></li>
@@ -453,17 +475,8 @@
 </ul>
 </div>
 <div>
-<h4 class="font-bold text-on-surface text-sm uppercase tracking-widest mb-8">Company</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Our Mission</a></li>
-<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Strategic Hubs</a></li>
-<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Compliance</a></li>
-<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Careers</a></li>
-</ul>
-</div>
-<div>
 <h4 class="font-bold text-on-surface text-sm uppercase tracking-widest mb-8">Connect</h4>
-<a class="flex items-center gap-3 bg-primary text-white p-4 rounded-2xl font-bold hover:shadow-lg hover:shadow-primary/20 transition-all text-sm mb-6" href="#">
+<a class="flex items-center gap-3 bg-primary text-white p-4 rounded-2xl font-bold hover:shadow-lg hover:shadow-primary/20 transition-all text-sm mb-6" href="https://wa.me/923001234567" target="_blank">
 <span class="material-symbols-outlined text-xl">forum</span>
                     WhatsApp Support
                 </a>
@@ -475,7 +488,7 @@
 <div class="flex gap-8">
 <span class="text-[10px] font-bold text-on-surface-variant/40 uppercase tracking-[0.2em]">Lahore</span>
 <span class="text-[10px] font-bold text-on-surface-variant/40 uppercase tracking-[0.2em]">Multan</span>
-<span class="text-[10px] font-bold text-on-surface-variant/40 uppercase tracking-[0.2em]">Sadiqabad</span>
+<span class="text-[10px] font-bold text-on-surface-variant/40 uppercase tracking-[0.2em]">Faisalabad</span>
 </div>
 </div>
 </div>
@@ -493,31 +506,67 @@
         }
     });
 
-    // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    themeToggle.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        const isDark = html.classList.contains('dark');
-        themeToggle.innerText = isDark ? 'light_mode' : 'dark_mode';
-    });
+    // Urdu Toggle Functionality
+    let isUrdu = false;
+    function toggleUrdu() {
+        isUrdu = !isUrdu;
+        const urduBtns = document.querySelectorAll('.urdu-btn');
+        urduBtns.forEach(btn => {
+            btn.textContent = isUrdu ? 'English' : 'اردو';
+        });
+        
+        if (isUrdu) {
+            document.documentElement.setAttribute('dir', 'rtl');
+            document.documentElement.setAttribute('lang', 'ur');
+            // Add Urdu-specific styles
+            document.body.style.fontFamily = "'Noto Nastaliq Urdu', Arial, sans-serif";
+        } else {
+            document.documentElement.setAttribute('dir', 'ltr');
+            document.documentElement.setAttribute('lang', 'en');
+            document.body.style.fontFamily = "";
+        }
+    }
 
-    // Simple fade-in animation on scroll
-    const observerOptions = { threshold: 0.1 };
+    // Enhanced scroll animations with staggered delays
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.premium-card, section h2, section .max-w-xl').forEach(el => {
+    // Observe all animatable elements
+    document.querySelectorAll('.premium-card, section h2, section .max-w-xl, .trust-indicator, nav-link').forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
         observer.observe(el);
+    });
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('animate-slide-down');
+        });
+    }
+
+    // Tab/Navigation animations
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('mouseenter', (e) => {
+            e.target.style.transform = 'translateY(-2px)';
+        });
+        link.addEventListener('mouseleave', () => {
+            e.target.style.transform = 'translateY(0)';
+        });
     });
 </script>
 </body></html>
