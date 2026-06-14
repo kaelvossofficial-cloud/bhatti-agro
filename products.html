@@ -135,16 +135,13 @@
 </div>
 <div class="hidden md:flex items-center gap-lg">
 <a class="text-primary font-bold border-b-2 border-secondary font-body-md text-body-md transition-colors duration-200 cursor-pointer active:scale-95 nav-link" href="products.html">Products</a>
-<a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-colors duration-200 cursor-pointer active:scale-95 nav-link" href="#services">Services</a>
 <a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-colors duration-200 cursor-pointer active:scale-95 nav-link" href="about.html">Company</a>
-<a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-colors duration-200 cursor-pointer active:scale-95 nav-link" href="#resources">Resources</a>
 </div>
 <div class="flex items-center gap-sm">
 <div class="relative hidden lg:block">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
 <input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-secondary text-sm w-64" placeholder="Search catalog..." type="text"/>
 </div>
-<button class="text-on-surface-variant p-2 rounded-full hover:bg-surface-container-high transition-colors urdu-btn" onclick="toggleUrdu()">اردو</button>
 <a href="contact.html" class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:bg-primary-container transition-all active:scale-95 shadow-sm">
                     Get Quote
                 </a>
@@ -507,26 +504,6 @@
 </div>
 </footer>
 <script>
-        // Urdu Toggle Functionality
-        let isUrdu = false;
-        function toggleUrdu() {
-            isUrdu = !isUrdu;
-            const urduBtns = document.querySelectorAll('.urdu-btn');
-            urduBtns.forEach(btn => {
-                btn.textContent = isUrdu ? 'English' : 'اردو';
-            });
-            
-            if (isUrdu) {
-                document.documentElement.setAttribute('dir', 'rtl');
-                document.documentElement.setAttribute('lang', 'ur');
-                document.body.style.fontFamily = "'Noto Nastaliq Urdu', Arial, sans-serif";
-            } else {
-                document.documentElement.setAttribute('dir', 'ltr');
-                document.documentElement.setAttribute('lang', 'en');
-                document.body.style.fontFamily = "";
-            }
-        }
-
         // Tab/Navigation animations
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('mouseenter', (e) => {
