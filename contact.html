@@ -123,15 +123,15 @@
                 BHATTI AGRO
             </div>
 <div class="hidden md:flex items-center gap-md">
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 font-body-md text-body-md" href="#">Products</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 font-body-md text-body-md" href="#">Services</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 font-body-md text-body-md" href="#">Company</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 font-body-md text-body-md" href="#">Resources</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 font-body-md text-body-md nav-link" href="products.html">Products</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 font-body-md text-body-md nav-link" href="#services">Services</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 font-body-md text-body-md nav-link" href="about.html">Company</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 font-body-md text-body-md nav-link" href="#resources">Resources</a>
 </div>
 <div class="flex items-center gap-sm">
-<button class="hidden sm:block text-secondary hover:text-secondary-fixed transition-colors font-label-md text-label-md">Urdu</button>
-<button class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-md text-label-md cursor-pointer active:scale-95 transition-all">Get Quote</button>
-<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container rounded-full">dark_mode</button>
+<a href="contact.html" class="hidden sm:block text-secondary hover:text-secondary-fixed transition-colors font-label-md text-label-md urdu-btn" onclick="toggleUrdu(); return false;">اردو</a>
+<a href="contact.html" class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-md text-label-md cursor-pointer active:scale-95 transition-all">Get Quote</a>
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container rounded-full urdu-btn mobile-only" onclick="toggleUrdu()">اردو</button>
 </div>
 </div>
 </nav>
@@ -301,20 +301,22 @@
 <footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant/30">
 <div class="max-w-container-max mx-auto px-lg py-xl flex flex-col md:flex-row gap-md justify-between">
 <div class="space-y-md">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">BHATTI AGRO</div>
+<a href="index.html" class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity">BHATTI AGRO</a>
 <p class="max-w-xs text-on-surface-variant font-body-md">Empowering Pakistan's farmers with innovative agricultural solutions and sustainable growth strategies.</p>
 </div>
 <div class="grid grid-cols-2 gap-xl">
 <div class="flex flex-col gap-sm">
-<h5 class="font-label-md text-label-md text-primary uppercase">Company</h5>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">About Us</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Contact Support</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">WhatsApp Support</a>
+<h5 class="font-label-md text-label-md text-primary uppercase">Quick Links</h5>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="index.html">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="products.html">Products</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="about.html">About Us</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="contact.html">Contact</a>
 </div>
 <div class="flex flex-col gap-sm">
-<h5 class="font-label-md text-label-md text-primary uppercase">Legal</h5>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+<h5 class="font-label-md text-label-md text-primary uppercase">Support</h5>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="https://wa.me/923001234567" target="_blank">WhatsApp Support</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="tel:+92411234567">+92 41 1234567</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="mailto:info@bhattiagro.com">info@bhattiagro.com</a>
 </div>
 </div>
 </div>
@@ -325,11 +327,34 @@
 </div>
 </footer>
 <script>
-        // Simple dark mode toggle logic
-        const darkModeBtn = document.querySelector('.material-symbols-outlined:last-child');
-        darkModeBtn.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            darkModeBtn.innerText = document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+        // Urdu Toggle Functionality
+        let isUrdu = false;
+        function toggleUrdu() {
+            isUrdu = !isUrdu;
+            const urduBtns = document.querySelectorAll('.urdu-btn');
+            urduBtns.forEach(btn => {
+                btn.textContent = isUrdu ? 'English' : 'اردو';
+            });
+            
+            if (isUrdu) {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ur');
+                document.body.style.fontFamily = "'Noto Nastaliq Urdu', Arial, sans-serif";
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', 'en');
+                document.body.style.fontFamily = "";
+            }
+        }
+
+        // Tab/Navigation animations
+        document.querySelectorAll('a[href], button').forEach(link => {
+            link.addEventListener('mouseenter', (e) => {
+                e.target.style.transform = 'translateY(-2px)';
+            });
+            link.addEventListener('mouseleave', () => {
+                e.target.style.transform = 'translateY(0)';
+            });
         });
 
         // Simple form interaction
@@ -351,6 +376,24 @@
                     btn.disabled = false;
                 }, 3000);
             }, 1500);
+        });
+
+        // Enhanced scroll animations
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card, section h1, section h2, section p').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
         });
     </script>
 </body></html>

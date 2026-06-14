@@ -161,9 +161,8 @@
 <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#resources">Resources</a>
 </div>
 <div class="flex items-center gap-sm">
-<button class="material-symbols-outlined p-sm text-on-surface-variant hover:text-secondary transition-colors" id="darkModeToggle">dark_mode</button>
-<button class="hidden sm:block px-md py-sm font-label-md text-label-md text-secondary border border-secondary rounded-lg hover:bg-secondary-container transition-all">Urdu</button>
-<button class="px-md py-sm font-label-md text-label-md bg-primary text-on-primary rounded-lg shadow-sm active:scale-95 transition-all" onclick="window.location.href='contact.html'">Get Quote</button>
+<button class="material-symbols-outlined p-sm text-on-surface-variant hover:text-secondary transition-colors urdu-btn" onclick="toggleUrdu()">اردو</button>
+<a href="contact.html" class="hidden sm:block px-md py-sm font-label-md text-label-md text-secondary border border-secondary rounded-lg hover:bg-secondary-container transition-all">Get Quote</a>
 <!-- Mobile Menu Button -->
 <button class="md:hidden material-symbols-outlined p-sm text-on-surface-variant" id="mobileMenuBtn">menu</button>
 </div>
@@ -442,6 +441,26 @@
 </div>
 </footer>
 <script>
+        // Urdu Toggle Functionality
+        let isUrdu = false;
+        function toggleUrdu() {
+            isUrdu = !isUrdu;
+            const urduBtns = document.querySelectorAll('.urdu-btn');
+            urduBtns.forEach(btn => {
+                btn.textContent = isUrdu ? 'English' : 'اردو';
+            });
+            
+            if (isUrdu) {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ur');
+                document.body.style.fontFamily = "'Noto Nastaliq Urdu', Arial, sans-serif";
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', 'en');
+                document.body.style.fontFamily = "";
+            }
+        }
+
         // Supabase Configuration - Replace with your actual credentials
         const SUPABASE_URL = 'https://your-project.supabase.co';
         const SUPABASE_ANON_KEY = 'your-anon-key';
@@ -452,23 +471,6 @@
         } catch (e) {
             console.log('Supabase not configured yet');
         }
-
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const html = document.documentElement;
-        
-        // Check for saved preference
-        if (localStorage.getItem('darkMode') === 'true') {
-            html.classList.add('dark');
-            darkModeToggle.innerText = 'light_mode';
-        }
-        
-        darkModeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const isDark = html.classList.contains('dark');
-            darkModeToggle.innerText = isDark ? 'light_mode' : 'dark_mode';
-            localStorage.setItem('darkMode', isDark);
-        });
 
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -501,6 +503,16 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Tab/Navigation animations
+        document.querySelectorAll('.nav-link, a[href]').forEach(link => {
+            link.addEventListener('mouseenter', (e) => {
+                e.target.style.transform = 'translateY(-2px)';
+            });
+            link.addEventListener('mouseleave', () => {
+                e.target.style.transform = 'translateY(0)';
+            });
+        });
 
         // WhatsApp Integration
         function openWhatsApp(message = '') {
