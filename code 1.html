@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | BHATTI AGRO SOLUTIONS PAKISTAN</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#241a00",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-error": "#ffffff",
+                    "tertiary": "#00450d",
+                    "surface-container": "#f0eded",
+                    "primary-container": "#1b5e20",
+                    "surface-variant": "#e5e2e1",
+                    "secondary-container": "#fed65b",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#055f18",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#2a6b2c",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#88d982",
+                    "on-secondary-fixed-variant": "#574500",
+                    "inverse-primary": "#91d78a",
+                    "on-tertiary-container": "#86d881",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#41493e",
+                    "secondary-fixed": "#ffe088",
+                    "on-tertiary-fixed": "#002204",
+                    "inverse-surface": "#303030",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#91d78a",
+                    "surface-bright": "#fcf9f8",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1b1c1c",
+                    "secondary": "#735c00",
+                    "surface-dim": "#dcd9d9",
+                    "primary": "#00450d",
+                    "surface-container-high": "#eae7e7",
+                    "secondary-fixed-dim": "#e9c349",
+                    "primary-fixed": "#acf4a4",
+                    "on-tertiary-fixed-variant": "#005312",
+                    "outline-variant": "#c0c9bb",
+                    "on-secondary-container": "#745c00",
+                    "outline": "#717a6d",
+                    "surface": "#fcf9f8",
+                    "background": "#fcf9f8",
+                    "on-primary-fixed": "#002203",
+                    "tertiary-fixed": "#a3f69c",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#90d689",
+                    "surface-container-low": "#f6f3f2",
+                    "on-surface": "#1b1c1c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "container-max": "1280px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 69, 13, 0.7), rgba(0, 69, 13, 0.7));
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/20 shadow-sm">
+<div class="max-w-container-max mx-auto px-lg flex items-center justify-between h-20">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed cursor-pointer active:scale-95">
+                BHATTI AGRO
+            </div>
+<div class="hidden md:flex items-center gap-md">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#">Products</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#">Services</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#">Company</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined p-sm text-on-surface-variant hover:text-secondary transition-colors">dark_mode</button>
+<button class="hidden sm:block px-md py-sm font-label-md text-label-md text-secondary border border-secondary rounded-lg hover:bg-secondary-container transition-all">Urdu</button>
+<button class="px-md py-sm font-label-md text-label-md bg-primary text-on-primary rounded-lg shadow-sm active:scale-95 transition-all">Get Quote</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[716px] flex items-center justify-center overflow-hidden pt-20">
+<img alt="Vast green wheat field in Pakistan" class="absolute inset-0 w-full h-full object-cover" data-alt="A wide-angle, cinematic photograph of a lush, emerald-green wheat field in Pakistan during the golden hour. The sunlight is warm and directional, casting long shadows across the neatly organized rows of crops. The atmosphere is calm and expansive, reflecting institutional stability and professional agricultural excellence. The high-contrast image emphasizes the vibrant greens and the vast, cloudless horizon, embodying a sense of growth and high-tech innovation in the primary sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW2xhHl2cnw-vpc9SWDd5ZUZyQJA7OWpsIRkp9bbfd49TGqeGiIAncEBxoXIumIMmec7onx3dHOk36-Ii5cjEQfFSzzbwLcA10q4LXBPCa6NZ8yDMqgRcObETG-pRuxf7PHENlzFAaQyMpLoRKzj9X9boBoaQBoJUDMQ5Zu1P2LaQYOqG4YgombbBhtHMI-6-Cxm5aJNA5qNLiefvricGK2AQaQ0iV2cqt7ktYEl7wItXO6ACoVdYOT50WuBosx_WtusXUTaM7Ub0"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="relative z-10 text-center px-md max-w-4xl">
+<h1 class="font-display-lg text-display-lg text-white mb-md reveal">Cultivating a Sustainable Future for Pakistan</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed mb-lg reveal" style="transition-delay: 200ms;">Leading the agricultural revolution through precision, technology, and trust.</p>
+</div>
+</header>
+<!-- Section 1: Premium Story Section -->
+<section class="py-xl max-w-container-max mx-auto px-lg">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-md">Our Mission &amp; Vision</h2>
+<div class="space-y-md">
+<div class="glass-panel p-md rounded-xl">
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-secondary text-4xl">visibility</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Vision</h3>
+<p class="text-on-surface-variant">To be the global benchmark for agricultural excellence in Pakistan, empowering every farmer with high-tech solutions that ensure food security and national prosperity.</p>
+</div>
+</div>
+</div>
+<div class="glass-panel p-md rounded-xl">
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-secondary text-4xl">track_changes</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Mission</h3>
+<p class="text-on-surface-variant">To provide integrated agro-solutions—from premium seeds to precision machinery—ensuring maximum yield and minimal environmental impact through scientific innovation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md reveal" style="transition-delay: 300ms;">
+<div class="space-y-md pt-xl">
+<div class="aspect-square rounded-xl overflow-hidden shadow-lg border border-white/20">
+<img alt="Laboratory crop testing" class="w-full h-full object-cover" data-alt="A clean, clinical photograph of a modern agricultural laboratory. A scientist in a white lab coat is carefully examining high-quality seeds under a microscope. The setting is bright and professional, utilizing soft white lighting and a minimalist aesthetic. This image conveys a sense of high-tech innovation, precision, and the white-glove service level of Bhatti Agro Solutions, with accents of deep green and gold in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAni5wDJl72bD8e4Rj5Y6SBGy8zSATPD4dG851KiKK0sIyQbwOK2nQlLpSOU64Q4zTAkaqFfVGsjOZRv_C8yg9lUTK7EpHjDXgGI6wRx_Pmkp6qfPI4d79VUjVjUdZ4gr_XPmDj2zvaCAMExAzYojzqllfMw5-QOKQVqsyQaFyTJBwFXNE3Xlj0tfbIAuEUBnPokZFopxqJAqyFvIldpEnd4ZJuGiDkdq9U734aqYBrkXL9F32hkZDt1n4OY-PKaljtEUgOmD1-gEc"/>
+</div>
+<div class="bg-primary p-md rounded-xl text-white">
+<h4 class="font-headline-md text-headline-md mb-xs">15+</h4>
+<p class="font-label-md text-label-md opacity-80">Years of Excellence</p>
+</div>
+</div>
+<div class="space-y-md">
+<div class="bg-secondary-container p-md rounded-xl text-on-secondary-container">
+<h4 class="font-headline-md text-headline-md mb-xs">500k+</h4>
+<p class="font-label-md text-label-md opacity-80">Farmers Empowered</p>
+</div>
+<div class="aspect-[3/4] rounded-xl overflow-hidden shadow-lg border border-white/20">
+<img alt="Tractor in field" class="w-full h-full object-cover" data-alt="A high-resolution, high-contrast photograph of a modern John Deere tractor working in a vast, sun-drenched field in Pakistan. The machinery is depicted in sharp focus, symbolizing efficiency and cutting-edge technology. The lighting is bright and crisp, highlighting the textures of the soil and the metallic sheen of the tractor. The overall mood is authoritative and stable, reinforcing the brand's position as a leader in the agricultural sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC48O9u2ZC_Mka5Qj7CaKaw9nzWQiE5dyQNAR5G88A__v9IFyYv760m_AjJE8DvfhIBARGziTzEZugOR1gFta5xbag8Jimv8JdQJgoYV6iYjpjnByXohYgigBK7PqAc9PmpMxCqOghyaoiNCUgviXdvxXAb7mnNTx5lCF7wMLfIWnOOH-cGlZm9QpQlMFvphyivU_f6-gIWjesorH_JOfmq54SGOH6-N_Ya4H2BaaAB_g1WZHt4BcFAcQgovNekwUJcDliRSYsYZd8"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Interactive Timeline -->
+<section class="py-xl bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="text-center mb-xl reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary">A Legacy of Growth</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto mt-md">Charting our journey from a local seed provider to Pakistan's premier integrated agro-solutions partner.</p>
+</div>
+<div class="relative">
+<!-- Timeline Line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-1 bg-outline-variant/30 hidden md:block"></div>
+<div class="space-y-xl relative">
+<!-- 2008 -->
+<div class="flex flex-col md:flex-row items-center gap-md reveal">
+<div class="flex-1 text-right hidden md:block">
+<h3 class="font-headline-md text-headline-md text-primary">2008</h3>
+<p class="text-on-surface-variant">The Foundation of Bhatti Agro in Multan, focusing on premium seed distribution.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary border-4 border-surface shadow-md relative z-10 flex items-center justify-center">
+<span class="w-3 h-3 bg-white rounded-full"></span>
+</div>
+<div class="flex-1 md:text-left text-center">
+<div class="md:hidden">
+<h3 class="font-headline-md text-headline-md text-primary">2008</h3>
+<p class="text-on-surface-variant">The Foundation of Bhatti Agro in Multan, focusing on premium seed distribution.</p>
+</div>
+<div class="glass-panel p-md rounded-xl inline-block">
+<span class="material-symbols-outlined text-secondary">sledding</span>
+</div>
+</div>
+</div>
+<!-- 2014 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-md reveal">
+<div class="flex-1 text-left hidden md:block">
+<h3 class="font-headline-md text-headline-md text-primary">2014</h3>
+<p class="text-on-surface-variant">Expansion into specialized crop nutrition and protection chemicals.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary border-4 border-surface shadow-md relative z-10 flex items-center justify-center">
+<span class="w-3 h-3 bg-white rounded-full"></span>
+</div>
+<div class="flex-1 md:text-right text-center">
+<div class="md:hidden">
+<h3 class="font-headline-md text-headline-md text-primary">2014</h3>
+<p class="text-on-surface-variant">Expansion into specialized crop nutrition and protection chemicals.</p>
+</div>
+<div class="glass-panel p-md rounded-xl inline-block">
+<span class="material-symbols-outlined text-secondary">science</span>
+</div>
+</div>
+</div>
+<!-- 2020 -->
+<div class="flex flex-col md:flex-row items-center gap-md reveal">
+<div class="flex-1 text-right hidden md:block">
+<h3 class="font-headline-md text-headline-md text-primary">2020</h3>
+<p class="text-on-surface-variant">Launch of Precision Agri-Tech division, introducing drones and IoT to local farms.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary border-4 border-surface shadow-md relative z-10 flex items-center justify-center">
+<span class="w-3 h-3 bg-white rounded-full"></span>
+</div>
+<div class="flex-1 md:text-left text-center">
+<div class="md:hidden">
+<h3 class="font-headline-md text-headline-md text-primary">2020</h3>
+<p class="text-on-surface-variant">Launch of Precision Agri-Tech division, introducing drones and IoT to local farms.</p>
+</div>
+<div class="glass-panel p-md rounded-xl inline-block">
+<span class="material-symbols-outlined text-secondary">precision_manufacturing</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Leadership Team -->
+<section class="py-xl max-w-container-max mx-auto px-lg">
+<div class="text-center mb-xl reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary">Visionary Leadership</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto mt-md">Guided by industry veterans dedicated to modernizing Pakistan's backbone industry.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Leader 1 -->
+<div class="group reveal" style="transition-delay: 100ms;">
+<div class="relative overflow-hidden rounded-xl mb-md aspect-[4/5]">
+<img alt="CEO Portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="A professional, high-end corporate headshot of a middle-aged South Asian male executive. He is wearing a sharp, charcoal-colored suit and a subtle smile, radiating authority and stability. The background is a blurred, modern office space with soft ambient lighting. The lighting is high-key and professional, adhering to the light-mode aesthetic of the brand, while conveying deep expertise in the agricultural sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcWLRavjOmdMO2JJ-zEbVHPZ6PxT6yw324whTuTnOWCTmQa69_JVMmXzMqQT1IMnz36kSMHhHuCzQ1Hayuo_NVO26L2pTXFHSLsGdiXxSj2ra9LAFXOHXwO8tPKmoaLS4Fa2He2JYMk2_SFOEH4IDAn-Sj0F3WAcMjQd4nv7sEVkLR_IOP7WkonoJRAUgyYkVdc6b6G1nb-VhMxMHFdjC2dmmeZZK3BrSFwqGRt5X56Ah3Cx7G_qMY5Scm69z_ebKJJzGjfgA_Q-c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">M. Irfan Bhatti</h3>
+<p class="text-secondary font-label-md text-label-md mb-sm uppercase tracking-wider">Founder &amp; CEO</p>
+<p class="text-on-surface-variant text-sm">25 years of experience in regional agronomy and supply chain management.</p>
+</div>
+<!-- Leader 2 -->
+<div class="group reveal" style="transition-delay: 200ms;">
+<div class="relative overflow-hidden rounded-xl mb-md aspect-[4/5]">
+<img alt="Director Portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="A professional corporate headshot of a South Asian woman in her late 30s. She is dressed in smart business attire, conveying intelligence and leadership. The lighting is soft and even, with a bright, minimalist studio background. This image represents the modern, inclusive, and technologically advanced side of Bhatti Agro, with a clear focus on professional integrity and vision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALhgDKLb5VS8zKsg0wbQqcSKWKPa7wdR4v7iFwcQ6Gv2nmsk1Y_mP2ZQOyS5rKw5HLelwuN9S2SqmLCd9outL-wPBoGXx-KBhqGKdMOGKuWLuHE-acaazyZ_rnvDUsRToo0n6Pnf06VcUXLeemNzq0nJwLyi4MsgDy5HQNVV6YL18CiEoIJh-fXq_rrnt59CmMOonNY_IVGAGrDt6lq0niMVD75fPIM-b-TJ6hkVTUczqps2OvR8OQfpnszNQbtacywaH3kQ573fY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Ayesha Qureshi</h3>
+<p class="text-secondary font-label-md text-label-md mb-sm uppercase tracking-wider">Director R&amp;D</p>
+<p class="text-on-surface-variant text-sm">Expert in seed genetics and climate-resilient crop development.</p>
+</div>
+<!-- Leader 3 -->
+<div class="group reveal" style="transition-delay: 300ms;">
+<div class="relative overflow-hidden rounded-xl mb-md aspect-[4/5]">
+<img alt="COO Portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="A professional studio portrait of a confident male executive in his 40s. He is wearing a navy blue blazer over a crisp white shirt, suggesting approachable yet authoritative leadership. The lighting is clean and cinematic, with a bright, airy background. The overall aesthetic is one of institutional stability and cutting-edge corporate success, perfectly aligned with a premium agricultural technology brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsOq_8m1DpT_Vake2QOKTaoKQNTS6ovMU6mhxSC7vaGkGoUm7KjLP6MCqUt3MuxUe4auoTAXxfUXZ8d8jZQLUfzaiLDLgMYT27nKONxHhaI-jWyXyMe57z-j7xEpdT4B4xlgcDSYGVTkFCCZfopqCLCO4YBpo8e8H6vH7LB6m_mp7f3Sak7jgRx-y_EQaeRxzWscVrDYBgF2_nkKRSBy22T5tc2U_1bsrI5A_TBlGLIcLFjsElgjoyof6IOz_RL2hopfTSWm5H_mQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Zubair Khan</h3>
+<p class="text-secondary font-label-md text-label-md mb-sm uppercase tracking-wider">COO</p>
+<p class="text-on-surface-variant text-sm">Overseeing nation-wide operations and strategic farm partnerships.</p>
+</div>
+</div>
+</section>
+<!-- Section 4: Certifications & Achievements -->
+<section class="py-xl bg-surface-container-highest">
+<div class="max-w-container-max mx-auto px-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-xl reveal">Standards of Excellence</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md items-center justify-items-center opacity-60">
+<div class="flex flex-col items-center reveal" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-5xl mb-sm">verified_user</span>
+<p class="font-label-md text-label-md text-on-surface text-center">ISO 9001:2015</p>
+</div>
+<div class="flex flex-col items-center reveal" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-5xl mb-sm">award_star</span>
+<p class="font-label-md text-label-md text-on-surface text-center">Best Seeds 2023</p>
+</div>
+<div class="flex flex-col items-center reveal" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-5xl mb-sm">psychology</span>
+<p class="font-label-md text-label-md text-on-surface text-center">PARC Registered</p>
+</div>
+<div class="flex flex-col items-center reveal" style="transition-delay: 400ms;">
+<span class="material-symbols-outlined text-5xl mb-sm">eco</span>
+<p class="font-label-md text-label-md text-on-surface text-center">Green Certification</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Why Farmers Trust Us -->
+<section class="py-xl overflow-hidden relative">
+<div class="max-w-container-max mx-auto px-lg grid grid-cols-1 lg:grid-cols-2 gap-xl items-center relative z-10">
+<div class="reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-md">Why Farmers Trust Us</h2>
+<div class="space-y-sm">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<p class="text-on-surface-variant"><strong class="text-on-surface">Scientific Validation:</strong> Every seed and solution is tested in Pakistani soil conditions before reaching your farm.</p>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<p class="text-on-surface-variant"><strong class="text-on-surface">Integrated Support:</strong> We don't just sell products; we provide 24/7 technical agronomy advice to our partners.</p>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<p class="text-on-surface-variant"><strong class="text-on-surface">Lasting Partnerships:</strong> Our success is measured by your harvest yield. We grow together.</p>
+</div>
+</div>
+<button class="mt-xl px-xl py-md bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-lg hover:shadow-xl transition-all">Download Company Profile</button>
+</div>
+<div class="relative reveal" style="transition-delay: 300ms;">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="glass-panel p-md rounded-2xl relative z-10 shadow-2xl">
+<img alt="Happy farmer in field" class="rounded-xl w-full h-full object-cover" data-alt="A high-quality, authentic photograph of a smiling Pakistani farmer in a traditional white kurta, standing in a vibrant, healthy green field. He is holding a handful of rich soil and looking towards the camera with confidence and pride. The lighting is bright and natural, suggesting a successful morning harvest. The overall feel is one of deep trust, authentic connection, and high-value service within the agricultural sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFuXh-nzCqDwJrGa86yrfKb5TfhLLS5HEoZm0cNu_tAXqu3SNfG1QlDc7Q7J_ggiZpCjqqNPASemlBUIpWVQi46aKImxggKDvAbdLx4st4PZiGgWk6vuYm3JrYaZgh6Ri7xQfnwJvxEKNw6cJ0c4BQpN4YnlUrSCZXuTaph6ejfBbq9vUudMr8T7brkV1PDK0e9oLsZeatv6HnAPjOqu_mlP0q6jl9WWkMjkeOzUWzMwfVqEmQdfwcsfaRuhVsrBWjbVZlO1DXZUs"/>
+<div class="absolute -bottom-6 -left-6 bg-white p-md rounded-xl shadow-xl flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">recommend</span>
+<div>
+<p class="font-bold text-primary">98% Retention</p>
+<p class="text-xs text-on-surface-variant">Annual Partner Loyalty</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-lg py-xl flex flex-col md:flex-row gap-md justify-between">
+<div>
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed mb-md">
+                    BHATTI AGRO
+                </div>
+<p class="max-w-xs text-on-surface-variant mb-md">Pioneering precision agriculture in Pakistan with heritage and heart.</p>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer">face_nod</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer">linked_camera</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer">public</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-xl">
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-md text-label-md text-primary font-bold">Quick Links</h4>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors" href="#">Contact Support</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors" href="#">WhatsApp Support</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-md text-label-md text-primary font-bold">Legal</h4>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-lg pb-md">
+<p class="text-sm text-on-surface-variant opacity-70">
+                © 2024 Bhatti Agro Solutions Pakistan. All rights reserved.
+            </p>
+</div>
+</footer>
+<script>
+        // Reveal on Scroll Logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Simple interactive micro-interactions for the timeline
+        document.querySelectorAll('.timeline-node').forEach(node => {
+            node.addEventListener('mouseenter', () => {
+                node.querySelector('.node-inner').classList.add('scale-125');
+            });
+            node.addEventListener('mouseleave', () => {
+                node.querySelector('.node-inner').classList.remove('scale-125');
+            });
+        });
+    </script>
+</body></html>
