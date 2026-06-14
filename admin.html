@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Admin Dashboard | BHATTI AGRO SOLUTIONS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary": "#00450d",
+          "secondary": "#735c00",
+          "surface": "#fcf9f8",
+          "background": "#fcf9f8",
+          "on-surface": "#1b1c1c",
+          "on-primary": "#ffffff",
+          "secondary-container": "#fed65b",
+          "on-secondary-container": "#745c00",
+          "outline-variant": "#c0c9bb",
+          "surface-container": "#f0eded"
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .sidebar-link.active { background-color: rgba(0, 69, 13, 0.1); color: #00450d; border-right: 3px solid #00450d; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 bg-primary text-white flex-shrink-0 hidden md:flex flex-col">
+<div class="p-6">
+<h1 class="text-xl font-bold">BHATTI AGRO <span class="text-xs opacity-70 block">Admin Panel</span></h1>
+</div>
+<nav class="flex-1 py-4">
+<a href="#dashboard" class="sidebar-link active flex items-center gap-3 px-6 py-3 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+</a>
+<a href="#leads" class="sidebar-link flex items-center gap-3 px-6 py-3 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">person_add</span> Leads <span id="leadCount" class="ml-auto bg-secondary-container text-on-secondary-container text-xs px-2 py-0.5 rounded-full">0</span>
+</a>
+<a href="#products" class="sidebar-link flex items-center gap-3 px-6 py-3 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">inventory_2</span> Products
+</a>
+<a href="#orders" class="sidebar-link flex items-center gap-3 px-6 py-3 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span> Orders
+</a>
+<a href="#messages" class="sidebar-link flex items-center gap-3 px-6 py-3 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">mail</span> Messages
+</a>
+<a href="#settings" class="sidebar-link flex items-center gap-3 px-6 py-3 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">settings</span> Settings
+</a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<a href="index.html" class="flex items-center gap-2 text-sm opacity-70 hover:opacity-100">
+<span class="material-symbols-outlined text-sm">home</span> Back to Website
+</a>
+</div>
+</aside>
+
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<!-- Top Bar -->
+<header class="bg-white border-b border-outline-variant px-6 py-4 flex items-center justify-between">
+<h2 class="text-lg font-semibold text-primary" id="pageTitle">Dashboard</h2>
+<div class="flex items-center gap-4">
+<button class="relative p-2 hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-10 h-10 bg-primary-container rounded-full flex items-center justify-center text-on-primary-container font-bold">A</div>
+</div>
+</header>
+
+<!-- Dashboard Content -->
+<div class="p-6">
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white rounded-xl p-6 shadow-sm border border-outline-variant/30">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm text-on-surface-variant">Total Leads</span>
+<span class="material-symbols-outlined text-primary">person_add</span>
+</div>
+<p class="text-3xl font-bold text-primary" id="totalLeads">0</p>
+<p class="text-xs text-on-surface-variant mt-2">This month</p>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-sm border border-outline-variant/30">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm text-on-surface-variant">Products</span>
+<span class="material-symbols-outlined text-secondary">inventory_2</span>
+</div>
+<p class="text-3xl font-bold text-secondary">124</p>
+<p class="text-xs text-on-surface-variant mt-2">Active catalog</p>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-sm border border-outline-variant/30">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm text-on-surface-variant">Pending Orders</span>
+<span class="material-symbols-outlined text-tertiary">shopping_cart</span>
+</div>
+<p class="text-3xl font-bold text-tertiary">12</p>
+<p class="text-xs text-on-surface-variant mt-2">Awaiting processing</p>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-sm border border-outline-variant/30">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm text-on-surface-variant">Messages</span>
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<p class="text-3xl font-bold text-primary">8</p>
+<p class="text-xs text-on-surface-variant mt-2">Unread</p>
+</div>
+</div>
+
+<!-- Leads Table -->
+<div class="bg-white rounded-xl shadow-sm border border-outline-variant/30 mb-8">
+<div class="p-6 border-b border-outline-variant/30 flex items-center justify-between">
+<h3 class="font-semibold text-primary">Recent Leads</h3>
+<button class="text-sm text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">download</span> Export CSV
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full">
+<thead class="bg-surface-container">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-semibold text-on-surface-variant uppercase">Name</th>
+<th class="px-6 py-3 text-left text-xs font-semibold text-on-surface-variant uppercase">Email</th>
+<th class="px-6 py-3 text-left text-xs font-semibold text-on-surface-variant uppercase">Phone</th>
+<th class="px-6 py-3 text-left text-xs font-semibold text-on-surface-variant uppercase">Type</th>
+<th class="px-6 py-3 text-left text-xs font-semibold text-on-surface-variant uppercase">Date</th>
+<th class="px-6 py-3 text-left text-xs font-semibold text-on-surface-variant uppercase">Status</th>
+<th class="px-6 py-3 text-left text-xs font-semibold text-on-surface-variant uppercase">Actions</th>
+</tr>
+</thead>
+<tbody id="leadsTableBody">
+<tr class="border-b border-outline-variant/10">
+<td class="px-6 py-4 text-sm">Muhammad Ahmed</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">ahmed@example.com</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">+92 300 1234567</td>
+<td class="px-6 py-4 text-sm"><span class="bg-secondary-container/20 text-secondary px-2 py-1 rounded text-xs">Farmer</span></td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">2024-01-15</td>
+<td class="px-6 py-4 text-sm"><span class="bg-tertiary-fixed/20 text-tertiary px-2 py-1 rounded text-xs">New</span></td>
+<td class="px-6 py-4 text-sm">
+<button class="text-primary hover:text-secondary" onclick="viewLead('Muhammad Ahmed')"><span class="material-symbols-outlined text-sm">visibility</span></button>
+<button class="text-secondary ml-2 hover:text-primary" onclick="contactLead('+923001234567')"><span class="material-symbols-outlined text-sm">mail</span></button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/10">
+<td class="px-6 py-4 text-sm">Ali Hassan</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">ali@example.com</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">+92 321 7654321</td>
+<td class="px-6 py-4 text-sm"><span class="bg-primary-fixed/20 text-primary px-2 py-1 rounded text-xs">Distributor</span></td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">2024-01-14</td>
+<td class="px-6 py-4 text-sm"><span class="bg-secondary-container/20 text-secondary px-2 py-1 rounded text-xs">Contacted</span></td>
+<td class="px-6 py-4 text-sm">
+<button class="text-primary hover:text-secondary" onclick="viewLead('Ali Hassan')"><span class="material-symbols-outlined text-sm">visibility</span></button>
+<button class="text-secondary ml-2 hover:text-primary" onclick="contactLead('+923217654321')"><span class="material-symbols-outlined text-sm">mail</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- Chart Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="bg-white rounded-xl p-6 shadow-sm border border-outline-variant/30">
+<h3 class="font-semibold text-primary mb-4">Lead Trends</h3>
+<canvas id="leadChart" height="200"></canvas>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-sm border border-outline-variant/30">
+<h3 class="font-semibold text-primary mb-4">Product Categories</h3>
+<canvas id="categoryChart" height="200"></canvas>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+<script>
+// Supabase Configuration
+const SUPABASE_URL = 'https://your-project.supabase.co';
+const SUPABASE_ANON_KEY = 'your-anon-key';
+let supabase;
+
+try {
+  supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+} catch (e) {
+  console.log('Supabase not configured');
+}
+
+// Sample data for demonstration
+const leads = [
+  { name: 'Muhammad Ahmed', email: 'ahmed@example.com', phone: '+923001234567', type: 'Farmer', date: '2024-01-15', status: 'New' },
+  { name: 'Ali Hassan', email: 'ali@example.com', phone: '+923217654321', type: 'Distributor', date: '2024-01-14', status: 'Contacted' }
+];
+
+// Update lead count
+document.getElementById('totalLeads').textContent = leads.length;
+document.getElementById('leadCount').textContent = leads.length;
+
+// Initialize Charts
+const leadCtx = document.getElementById('leadChart').getContext('2d');
+new Chart(leadCtx, {
+  type: 'line',
+  data: {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    datasets: [{
+      label: 'Leads',
+      data: [12, 19, 15, 25, 22, 30],
+      borderColor: '#00450d',
+      tension: 0.4,
+      fill: true,
+      backgroundColor: 'rgba(0, 69, 13, 0.1)'
+    }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+new Chart(categoryCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Fertilizers', 'Seeds', 'Crop Protection', 'Micronutrients'],
+    datasets: [{
+      data: [42, 28, 35, 12],
+      backgroundColor: ['#00450d', '#735c00', '#fed65b', '#1b5e20']
+    }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+// Functions
+function viewLead(name) {
+  alert('Viewing lead details for: ' + name);
+}
+
+function contactLead(phone) {
+  const url = `https://wa.me/${phone.replace('+', '')}`;
+  window.open(url, '_blank');
+}
+
+// Navigation
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+    const section = this.getAttribute('href').substring(1);
+    document.getElementById('pageTitle').textContent = section.charAt(0).toUpperCase() + section.slice(1);
+  });
+});
+
+// Fetch leads from Supabase (when configured)
+async function fetchLeads() {
+  if (!supabase) return;
+  try {
+    const { data, error } = await supabase.from('leads').select('*').order('created_at', { ascending: false });
+    if (error) throw error;
+    console.log('Leads:', data);
+  } catch (error) {
+    console.error('Error fetching leads:', error);
+  }
+}
+
+// Uncomment to enable: fetchLeads();
+</script>
+</body>
+</html>

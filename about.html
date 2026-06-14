@@ -3,8 +3,24 @@
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="BHATTI AGRO SOLUTIONS PAKISTAN - Leading agricultural revolution through precision, technology, and trust. Premium seeds, fertilizers, and crop protection solutions."/>
+<meta name="keywords" content="agriculture Pakistan, fertilizers, seeds, crop protection, agro solutions, farming technology, Bhatti Agro"/>
+<meta name="author" content="BHATTI AGRO SOLUTIONS PAKISTAN"/>
+<meta name="robots" content="index, follow"/>
+<!-- Open Graph -->
+<meta property="og:title" content="About Us | BHATTI AGRO SOLUTIONS PAKISTAN"/>
+<meta property="og:description" content="Leading the agricultural revolution through precision, technology, and trust in Pakistan."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://bhattiagro.com/about"/>
+<meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDW2xhHl2cnw-vpc9SWDd5ZUZyQJA7OWpsIRkp9bbfd49TGqeGiIAncEBxoXIumIMmec7onx3dHOk36-Ii5cjEQfFSzzbwLcA10q4LXBPCa6NZ8yDMqgRcObETG-pRuxf7PHENlzFAaQyMpLoRKzj9X9boBoaQBoJUDMQ5Zu1P2LaQYOqG4YgombbBhtHMI-6-Cxm5aJNA5qNLiefvricGK2AQaQ0iV2cqt7ktYEl7wItXO6ACoVdYOT50WuBosx_WtusXUTaM7Ub0"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="About Us | BHATTI AGRO SOLUTIONS PAKISTAN"/>
+<meta name="twitter:description" content="Leading the agricultural revolution through precision, technology, and trust in Pakistan."/>
+<link rel="canonical" href="https://bhattiagro.com/about"/>
 <title>About Us | BHATTI AGRO SOLUTIONS PAKISTAN</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -121,25 +137,45 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Mobile menu styles */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/20 shadow-sm">
 <div class="max-w-container-max mx-auto px-lg flex items-center justify-between h-20">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed cursor-pointer active:scale-95">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed cursor-pointer" onclick="window.location.href='index.html'">
                 BHATTI AGRO
             </div>
 <div class="hidden md:flex items-center gap-md">
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#">Products</a>
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#">Services</a>
-<a class="font-body-md text-body-md text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#">Company</a>
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#">Resources</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="products.html">Products</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#services">Services</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="about.html">Company</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors duration-200 cursor-pointer active:scale-95" href="#resources">Resources</a>
 </div>
 <div class="flex items-center gap-sm">
-<button class="material-symbols-outlined p-sm text-on-surface-variant hover:text-secondary transition-colors">dark_mode</button>
+<button class="material-symbols-outlined p-sm text-on-surface-variant hover:text-secondary transition-colors" id="darkModeToggle">dark_mode</button>
 <button class="hidden sm:block px-md py-sm font-label-md text-label-md text-secondary border border-secondary rounded-lg hover:bg-secondary-container transition-all">Urdu</button>
-<button class="px-md py-sm font-label-md text-label-md bg-primary text-on-primary rounded-lg shadow-sm active:scale-95 transition-all">Get Quote</button>
+<button class="px-md py-sm font-label-md text-label-md bg-primary text-on-primary rounded-lg shadow-sm active:scale-95 transition-all" onclick="window.location.href='contact.html'">Get Quote</button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden material-symbols-outlined p-sm text-on-surface-variant" id="mobileMenuBtn">menu</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div class="mobile-menu fixed top-20 left-0 w-full bg-surface dark:bg-inverse-surface border-b border-outline-variant/30 shadow-lg md:hidden" id="mobileMenu">
+<div class="flex flex-col p-lg gap-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="products.html">Products</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#services">Services</a>
+<a class="font-body-md text-body-md text-primary font-bold" href="about.html">Company</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#resources">Resources</a>
+<a class="font-body-md text-body-md text-secondary border border-secondary rounded-lg py-sm text-center" href="#">Urdu</a>
 </div>
 </div>
 </nav>
@@ -406,6 +442,51 @@
 </div>
 </footer>
 <script>
+        // Supabase Configuration - Replace with your actual credentials
+        const SUPABASE_URL = 'https://your-project.supabase.co';
+        const SUPABASE_ANON_KEY = 'your-anon-key';
+        let supabase;
+        
+        try {
+            supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        } catch (e) {
+            console.log('Supabase not configured yet');
+        }
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+        
+        // Check for saved preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            html.classList.add('dark');
+            darkModeToggle.innerText = 'light_mode';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            darkModeToggle.innerText = isDark ? 'light_mode' : 'dark_mode';
+            localStorage.setItem('darkMode', isDark);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            mobileMenuBtn.innerText = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenuBtn.innerText = 'menu';
+            });
+        });
+
         // Reveal on Scroll Logic
         const observerOptions = {
             threshold: 0.1
@@ -420,6 +501,33 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // WhatsApp Integration
+        function openWhatsApp(message = '') {
+            const phoneNumber = '923001234567';
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Lead Capture - Form Submission Handler
+        async function captureLead(formData) {
+            if (!supabase) {
+                console.log('Lead captured (Supabase not configured):', formData);
+                return { success: true };
+            }
+            
+            try {
+                const { data, error } = await supabase
+                    .from('leads')
+                    .insert([formData]);
+                
+                if (error) throw error;
+                return { success: true, data };
+            } catch (error) {
+                console.error('Error capturing lead:', error);
+                return { success: false, error };
+            }
+        }
 
         // Simple interactive micro-interactions for the timeline
         document.querySelectorAll('.timeline-node').forEach(node => {
